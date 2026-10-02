@@ -1,4 +1,6 @@
-const TodoList = (props) => {
+import {memo} from 'react'
+
+const TodoInfo = (props) => {
     const {
       total,
       done,
@@ -25,4 +27,4 @@ const TodoList = (props) => {
     )
 }
 
-export default TodoList;
+export default memo(TodoInfo);
