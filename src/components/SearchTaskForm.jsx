@@ -1,6 +1,6 @@
 import Field from "./Field.jsx";
 import {useContext} from "react";
-import {TasksContext} from "../context/TasksContext.js";
+import {TasksContext} from "../context/TasksContext.jsx";
 
 const SearchTaskForm = () => {
     const {
