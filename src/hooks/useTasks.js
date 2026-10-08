@@ -59,27 +59,20 @@ const useTasks = () => {
         [tasks]
     );
 
-    const addTask = useCallback(() => {
-        if (newTaskTitle.trim().length > 0) {
-            const newTask = {
-                id:
-                    crypto?.randomUUID() ??
-                    Date.now().toString(),
-                title: newTaskTitle,
+    const addTask = useCallback((title) => {
+        const newTask = {
+                id: crypto?.randomUUID() ?? Date.now().toString(),
+                title,
                 isDone: false,
-            };
-
+            }
             setTasks((prevTasks) => [
                 ...prevTasks,
                 newTask,
             ]);
-
             setNewTaskTitle("");
             setSearchQuery("");
-
             newTaskInputRef.current?.focus();
-        }
-    }, [newTaskTitle]);
+    }, []);
 
     useEffect(() => {
         saveTasks(tasks)
